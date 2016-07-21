@@ -26,6 +26,7 @@ io.on('connection', function(socket){
 
     request("https://api.spotify.com/v1/search?q=track:" + lastWord + "&type=track", function(err, resp, body) {
     body = JSON.parse(body);
+    
     var randomTrackNumber = Math.floor(Math.random() * body.tracks.items.length);
     console.log( randomTrackNumber );
     var randomTrack = body.tracks.items[randomTrackNumber];
