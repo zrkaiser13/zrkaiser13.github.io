@@ -31,7 +31,7 @@ io.on('connection', function(socket){
     var randomTrack = body.tracks.items[randomTrackNumber];
     msg.text = msg.text + " <a href='" + randomTrack.external_urls.spotify + "'>"+ randomTrack.name +"</a> by " + randomTrack.artists[0].name;
     io.emit("chat message", msg);
-    messageArchive.push(msg);
+    chatArchive.push(msg);
     });
 
     
